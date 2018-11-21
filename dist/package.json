@@ -3,10 +3,10 @@
     "private": false,
     "version": "2.0.0",
     "description": "Angular decorators to automagically keep variables in HTML5 LocalStorage, SessionStorage, cookies; injectable services for managing and listening to data changes and a bit more.",
-    "main": "./ngx-store.js",
-    "main for angular5": "./bundles/ngx-store.umd.js",
-    "module": "./esm5/ngx-store.js",
-    "es2015": "./esm2015/ngx-store.js",
+    "main": "./dist/ngx-store.js",
+    "main for angular5": "./dist/bundles/ngx-store.umd.js",
+    "module": "./dist/esm5/ngx-store.js",
+    "es2015": "./dist/esm2015/ngx-store.js",
     "scripts": {
         "build": "node build.js",
         "lint": "tslint ./*.ts -t verbose",
@@ -18,7 +18,7 @@
         "compodoc": "compodoc -p tsconfig.json",
         "compodoc-serve": "compodoc -s"
     },
-    "typings": "./ngx-store.d.ts",
+    "typings": "./dist/ngx-store.d.ts",
     "author": "Daniel Kucal",
     "repository": {
         "type": "git",
@@ -44,7 +44,6 @@
         "lodash.isequal": "^4.5.0",
         "lodash.merge": "^4.6.1",
         "lodash.set": "^4.3.2",
-        "ts-debug": "^1.1.2",
         "tslib": "^1.9.0"
     },
     "peerDependencies": {

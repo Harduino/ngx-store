@@ -5,7 +5,6 @@
 
 import { Injectable, NgModule } from '@angular/core';
 import { Subject, fromEvent, interval, merge } from 'rxjs';
-import { Debugger } from 'ts-debug';
 import { delay, filter, map } from 'rxjs/operators';
 
 var isEqual = require('lodash.isequal');
@@ -472,8 +471,7 @@ else if (ConfigFills.previousPrefix === undefined) {
 }
 // merge default config, deprecated config and global config all together
 var Config = Object.assign({}, DefaultConfig, ConfigFills);
-var debug = new Debugger(console, Config.debugMode, '[ngx-store] ');
-ConfigHelper.setItem('prefix', Config.prefix);
+var debug = console;
 
 var _get = require('lodash.get');
 var _set = require('lodash.set');
@@ -703,7 +701,7 @@ var WebStorageService = /** @class */ (function () {
     WebStorageService.prototype.update = function (key, changes) {
         var value = this.get(key);
         if (value !== undefined && typeof value !== 'object') {
-            debug.throw(new Error("Value stored under \"" + key + "\" key is not an object and tried to be updated."));
+            debug.log(new Error("Value stored under \"" + key + "\" key is not an object and tried to be updated."));
             return value;
         }
         return this.set(key, merge$1({}, value, changes));

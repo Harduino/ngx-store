@@ -1,5 +1,4 @@
 import { ConfigHelper } from './config.helper';
-import { Debugger } from 'ts-debug';
 // TODO allow to set different config for local and session storage
 // TODO check if NGXSTORE_CONFIG implements WebStorageConfigInterface
 // TODO allow to set configuration in node-config (`config` on npm)
@@ -26,6 +25,5 @@ else if (ConfigFills.previousPrefix === undefined) {
 }
 // merge default config, deprecated config and global config all together
 export var Config = Object.assign({}, DefaultConfig, ConfigFills);
-export var debug = new Debugger(console, Config.debugMode, '[ngx-store] ');
-ConfigHelper.setItem('prefix', Config.prefix);
+export var debug = console;
 //# sourceMappingURL=config.js.map

@@ -52,7 +52,7 @@ export abstract class WebStorageService {
     public update(key: string, changes: any): any {
         const value = this.get(key);
         if (value !== undefined && typeof value !== 'object') {
-            debug.throw(new Error(`Value stored under "${key}" key is not an object and tried to be updated.`));
+            debug.log(new Error(`Value stored under "${key}" key is not an object and tried to be updated.`));
             return value;
         }
         return this.set(key, merge({}, value, changes));
