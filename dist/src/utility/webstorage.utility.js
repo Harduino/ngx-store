@@ -16,7 +16,7 @@ var WebStorageUtility = /** @class */ (function () {
             return;
         if (previousPrefix === undefined)
             return;
-        debug.log(this.getStorageName() + ' > Detected prefix change from ' + previousPrefix + ' to ' + prefix);
+        // debug.log(this.getStorageName() + ' > Detected prefix change from ' + previousPrefix + ' to ' + prefix);
         this.forEach(function (value, key) {
             // ignore config settings when previousPrefix = ''
             if (key.startsWith(previousPrefix) && !key.startsWith(CONFIG_PREFIX)) {
