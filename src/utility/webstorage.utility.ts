@@ -33,7 +33,7 @@ export class WebStorageUtility {
         if (prefix === previousPrefix) return;
         if (previousPrefix === null) return;
         if (previousPrefix === undefined) return;
-        debug.log(this.getStorageName() + ' > Detected prefix change from ' + previousPrefix + ' to ' + prefix);
+        // debug.log(this.getStorageName() + ' > Detected prefix change from ' + previousPrefix + ' to ' + prefix);
         this.forEach((value, key) => {
             // ignore config settings when previousPrefix = ''
             if (key.startsWith(previousPrefix) && !key.startsWith(CONFIG_PREFIX)) {
